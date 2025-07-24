@@ -35,3 +35,4 @@ ASP.NET Core Web API (.NET 8) ElectricityBilling. Projekat koristi Docker i Post
 
 * Prvi kreirani korisnik dobija rolu Admin.
 * Logger je implementiran samo za potrebe debagovanja i ne zapisuje se u fajl.
+* XUnit testovi su napisani samo za dva primjera kao demonstracija testiranja.
