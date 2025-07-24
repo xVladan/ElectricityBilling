@@ -24,6 +24,7 @@ namespace ElectricityBilling.API.Controllers
 
         // GET: api/TaxGroup
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<TaxGroupDTO>>> GetAllTaxGroups()
         {
             try
@@ -41,6 +42,7 @@ namespace ElectricityBilling.API.Controllers
 
         // GET: api/TaxGroup/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<TaxGroupDTO>> GetTaxGroupById(int id)
         {
             try
@@ -64,6 +66,7 @@ namespace ElectricityBilling.API.Controllers
 
         // POST: api/TaxGroup
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<TaxGroupResponseDTO>> CreateTaxGroup([FromBody] TaxGroupDTO dto)
         {
             try

@@ -20,7 +20,7 @@ namespace ElectricityBilling.API.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<RecommendationDTO>> Recommend([FromBody] RecommendationRequestDTO request)
         {
             var recommendation = await _recommendationService.RecommendBestPlanAsync(request.TaxGroupName, request.MonthlyConsumption);

@@ -23,6 +23,7 @@ namespace ElectricityBilling.API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<PlanDTO>>> GetAllPlans()
         {
             try
@@ -39,6 +40,7 @@ namespace ElectricityBilling.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<PlanDTO>> GetPlanById(int id)
         {
             try
