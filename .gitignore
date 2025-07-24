@@ -1,0 +1,55 @@
+## Build results
+bin/
+obj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code
+.vscode/
+.history/
+
+## Visual Studio working folder
+.vs/
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Configuration files
+appsettings.*.json
+secrets.json
+
+## DotNet Watch
+**/Properties/launchSettings.json
+
+## Logs
+*.log
+
+## Backup & transient files
+*.bak
+*.tmp
+*.swp
+
+## NuGet
+*.nupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## Rider
+.idea/
+
+## OS-specific
+.DS_Store
+Thumbs.db
+
+## Others
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db

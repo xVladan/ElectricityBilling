@@ -1,0 +1,27 @@
+services:
+  electricitybilling.api:
+    image: ${DOCKER_REGISTRY-}electricitybillingapi
+    container_name: electricitybilling.api
+    build:
+      context: .
+      dockerfile: ElectricityBilling.API/Dockerfile
+    ports:
+      - "6001:6001"
+    entrypoint: ["./wait-for-it.sh", "electricitybilling.database:5432", "--", "dotnet", "ElectricityBilling.API.dll"]
+    depends_on:
+      - electricitybilling.database
+
+  electricitybilling.database:
+    image: postgres:latest
+    container_name: electricitybilling.database
+    environment:
+      - POSTGRES_DB=ElectricityDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres 
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432 
+
+volumes:
+  pgdata:
